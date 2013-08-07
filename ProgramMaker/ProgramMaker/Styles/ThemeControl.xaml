@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:s="clr-namespace:ProgramMaker.Controls"
+                    xmlns:d="clr-namespace:DiagramDesigner"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="SizeChrome.xaml"/>
+        <ResourceDictionary Source="ResizeRotateChrome.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="MoveThumbTemplate"  TargetType="{x:Type d:MoveThumb}">
+        <Rectangle Fill="Transparent"/>
+    </ControlTemplate>
+
+    <Style x:Key="MyBaseControl" TargetType="s:MyBaseControl">
+        <Setter Property="MinWidth" Value="200"/>
+        <Setter Property="MinHeight" Value="150"/>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="s:MyBaseControl">
+                    <Viewbox>
+                        <Grid Background="Transparent" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                            <d:MoveThumb Cursor="SizeAll" Template="{StaticResource MoveThumbTemplate}"/>
+                            <ContentPresenter Margin="2,10,2,2" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                            <!--Label FontSize="10" IsHitTestVisible="False" Content="{TemplateBinding Content}"></Label-->
+                            <d:DesignerItemDecorator x:Name="ItemDecorator" ShowDecorator="{Binding IsShowResizeDecorator}" />
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="s:MyContainer">
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="50"/>
+    </Style>
+</ResourceDictionary>

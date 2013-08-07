@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<scenePage>
+  <canvas tag="Canvas" height="700" width="900" sourcePath="" rotateTransform="0" text="" canvasLeft="0" canvasTop="0" imageSwitch="0" stretchModel="0" sceneTime="1" backgroundColor="0">
+    <Office tag="Office" height="150" width="200" sourcePath="source\价格.docx" rotateTransform="0" text="" canvasLeft="146" canvasTop="13.1633333333333" imageSwitch="0" stretchModel="0" sceneTime="0" backgroundColor="0" />
+  </canvas>
+  <sourceList>
+    <sourceElement>
+    </sourceElement>
+    <sourceElement>source\价格.docx</sourceElement>
+  </sourceList>
+  <resolution>900,700</resolution>
+</scenePage>
